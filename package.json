@@ -1,0 +1,21 @@
+{
+  "name": "sistemaconsuniv",
+  "version": "1.0.0",
+  "description": "sistema de agendamento do consuniv",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mailtrap": "^3.0.0",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.8",
+    "nodemon": "^2.0.19",
+    "sequelize": "^6.21.4"
+  }
+}

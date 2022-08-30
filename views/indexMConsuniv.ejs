@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-CONSUNIV</title>
+
+    <script src="./js/agendaConsuniv.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Noto+Sans+JP:wght@100;300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Raleway:400,200');
+
+        .wrapingHeader{
+            margin: auto;
+            margin-bottom: 30px;
+            width: 100%;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .content{
+            width: 275px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            background-color: rgb(40, 138, 73);
+            border-radius: 5px;
+        }
+
+        .titleHeaderIcon{
+            font-size: 30px;
+            font-weight: bolder;
+            font-family: sans-serif;
+            color: white;
+            margin-left: 10px;
+            margin-top: 0;
+            font-family: 'Bree Serif', serif;
+        }
+
+        .titleHeader{
+            font-family: sans-serif;
+            font-size: 25px;
+            color:limegreen;
+        }
+
+        .linhaSeparadora{
+            margin-top: 10px;
+            height: 2px;
+            background-color: gainsboro;
+            width:100%;
+        }
+
+        #wrapingAgenda{
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        .contentAgenda{
+            margin: auto;
+            width: 100%;
+            min-height: 410px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            /* border: 2px solid gainsboro; */
+        }
+        .cabecalhoAgenda{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width:100%;
+            height: 70px;
+            background-color:white;
+            box-shadow: 0px 3px 5px 0px gray;
+        }
+
+        .bodyContentAgenda{
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width:100%;
+            min-height:320px;
+            margin-top:15px
+        }
+
+        .agenda{
+           margin-top: 15px;
+           width: 370px;
+           min-height: 320px; 
+           display: flex;
+           flex-direction: column;
+           align-items: flex-start;
+
+           border-radius: 10px;
+           border: 1px solid gainsboro;
+
+        }
+
+        .cabecaAgenda{
+            width: 100%;
+            min-height:50px;
+            background-color:limegreen;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            text-align: center;
+            font-family: sans-serif;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .bodyAgenda{
+            margin: 5px auto 0px auto;
+            width: 100%;
+        }
+
+        .tabelaAgenda{
+            width: 370px;
+        }
+
+        
+        .corpoTabelaAgenda > tr > td{
+            text-align: center;
+            width: 45px;
+            height: 45px;
+            
+        }
+
+        .corpoTabelaAgenda > tr > td:hover{
+            text-align: center;
+            text-decoration: underline;
+            
+        }
+        
+        .diaEvento{  /*Esta classe é incluida quando existe um evento no dia específico*/
+            /* border-radius:50%; */
+            background-color:seagreen;
+            color: white;
+            font-weight: bolder;
+        }
+
+        
+        
+        .avisos{
+           margin-top: 15px;
+           width: 420px;
+           height: 320px;
+           border: 1px solid black;
+        }
+        
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="wrapingHeader">
+            <div class="content">
+                <div style="margin: auto;">
+                <span> <img width="35px" src="./img/chapeuFormacao.png" alt="chapéu de formação" title="cerimonial" style="position:relative; top:25px; transform:rotate(-12deg)"></span>
+                <span> <p class="titleHeaderIcon">Cerimonial-UEA</p></span>
+                </div>   
+            </div>
+        </div>
+    </header>
+
+    <div style="display:inline-flex; align-items:center; width:100%">
+
+    <div class="linhaSeparadora"></div>
+    <div style="position: absolute; margin-left:35px; border-radius:50px; border:1px solid gainsboro; background-color: white; padding:2px 9px 2px 9px;"><span style="display:inline-flex; align-items:center; width:275px;"><p style="font-family: 'Noto Sans JP', sans-serif;">Módulo de agendamento</p> <a style="font-family: 'Noto Sans JP', sans-serif; margin-left: 2px; text-decoration: none; color: darkgreen; font-weight:bolder;" href="/">CONSUNIV</a></span></div>
+
+    </div>
+
+    
+    <div id="wrapingAgenda">
+
+        <div class="contentAgenda">
+            
+            <div class="cabecalhoAgenda">
+                <h2 style="font-family: sans-serif;font-size:18px;" >AGENDA CONSUNIV</h2>
+            </div>
+            
+            <div class="bodyContentAgenda">
+                
+                <div class="agenda">
+
+                    <div class="cabecaAgenda">
+                       <span><img src="./img/iconRowLeft.png" alt="seta para esquerda" title="voltar mês"width="20px" onclick="voltarMes()" ></span> <span style="display:inline-flex; align-items:center; justify-content:center; text-transform: uppercase;"> <p id="mes">MÊS</p>  <p style="margin-left:5px;margin-right:5px"> - </p> <p id="ano">ANO</p> </span>  <span><img width="20px"  src="./img/iconRowRight.png" alt="seta para Direita" title="voltar mês" onclick="passaMes()"></span>
+                    </div>
+
+                    <div class="bodyAgenda" >
+                        <table class="tabelaAgenda">
+                            <thead>
+                                <tr>
+                                    <th>Dom</th>
+                                    <th>Seg</th>
+                                    <th>Ter</th>
+                                    <th>Qua</th>
+                                    <th>Qui</th>
+                                    <th>Sex</th>
+                                    <th>Sab</th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="corpoTabelaAgenda">
+                                <tr>
+                                    <td class="diaEvento">1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                    <td>7</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                    <td>11</td>
+                                    <td>12</td>
+                                    <td>13</td>
+                                    <td>14</td>
+                                </tr>
+                                <tr>
+                                    <td>15</td>
+                                    <td>16</td>
+                                    <td>17</td>
+                                    <td>18</td>
+                                    <td>19</td>
+                                    <td>20</td>
+                                    <td>21</td>
+                                </tr>
+                                <tr>
+                                    <td>22</td>
+                                    <td>23</td>
+                                    <td>24</td>
+                                    <td>25</td>
+                                    <td>26</td>
+                                    <td>27</td>
+                                    <td>28</td>
+                                </tr>
+                                <tr>
+                                    <td>29</td>
+                                    <td>30</td>
+                                    <td>31</td>
+                                    <td>32</td>
+                                    <td>33</td>
+                                    <td>34</td>
+                                    <td>35</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+                <script>
+                    let ano = new Date().getFullYear();
+                    let mes = new Date().getMonth();
+                    console.log(new Date().getDate());
+                    renderCalendar(ano,mes);
+
+                </script>
+
+                <div class="avisos"></div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+
+<script defer>
+
+    async function voltarMes(){
+        const ano = parseInt(document.getElementById('ano').outerText);
+        const mesAntes = document.getElementById('mes');
+        // console.log(typeof(mesAntes.outerText));
+        // console.log(mesAntes.outerText.toLowerCase());
+        // console.log(meses[7]);    
+        // console.log(typeof(meses.indexOf(mesAntes.outerText.toLowerCase())));
+        const indiceNovoMes = meses.indexOf(mesAntes.outerText.toLowerCase()) - 1;
+        
+        renderCalendar(ano, indiceNovoMes);
+        
+
+    }
+
+    async function passaMes(){
+        const ano = parseInt(document.getElementById('ano').outerText);
+        const mes = document.getElementById('mes');
+        const indiceMes = meses.indexOf(mes.outerText.toLowerCase()) ;
+        
+        acresceMes(ano, indiceMes);
+    }
+
+</script>
+
+
+
+
+</html>

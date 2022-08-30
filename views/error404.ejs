@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;1,100;1,300&display=swap');
+
+        *{
+            margin: 0;
+            padding:0;
+        }
+    
+        .wrapingPage{
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .divWrapingContent{
+            margin: auto;
+            background-color: lightgray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 330px;
+            min-width: 320px;
+            min-height: 300px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        .buttomError{
+            width: 125px;
+            height: 35px;
+            border:1px solid white;
+            background-color: transparent;
+            color: white;
+            font-family: 'Noto Sans', sans-serif;
+            cursor: pointer;
+        }
+
+        .buttomError:hover{
+            border-radius: 5px;
+            background-color: gainsboro;
+            border: none;
+            
+        }
+    
+    </style>
+
+</head>
+<body>
+
+    <!-- <div style="text-align:center;">Página não enontrada</div> -->
+    <!-- <div><a href="/"> <button style="width:80px;height:35px; border:none; border-radius:5px;  background-color:gray;color: white; cursor:pointer; margin: auto;">HOME</button></a></div> -->
+    <p id="MsgVoltando" style="margin-left:15px; display:none; margin-top:15px;position: absolute;">Voltando...</p>
+    
+    <div class="wrapingPage">
+       
+        <div class="divWrapingContent">
+           
+           <div style="margin-top:15px;" ><img style="margin:auto;" width="65px" src="./img/iconNotFound.png" alt="iconde de nao encontrada" title="NotFound"></div>
+           <div style=" color: white; display:flex; flex-direction:column; align-items:center; justify-content:center; margin: 15px auto; " > <p style="font-weight:bolder;"> 404-ERROR</p> <P>Página não encontrada</P> </div>
+           <div style="display:flex; align-items:center; justify-content:center"> <button class="buttomError" onclick="redirecionar()">HOME</button> </div>
+       </div>
+
+   </div>
+
+</body>
+
+    <script>
+
+        function redirecionar(){
+            
+            document.getElementById("MsgVoltando").style.display = "flex";  
+            
+            setTimeout(()=>{
+            window.location.href = "/home";
+            }, 2000);
+        }
+
+    </script>
+
+</html>
